@@ -7,8 +7,8 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Animated, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 
-const DEFAULT_PLACEHOLDER_COLOR = '#C7C7CD';
-const DEFAULT_LABEL_COLOR = '#414Db1';
+const DEFAULT_PLACEHOLDER_COLOR = '#929497';
+const DEFAULT_LABEL_COLOR = '#929497';
 const DEFAULT_LABEL_ERROR_COLOR = '#C5270E';
 
 export default class TextInputLayout extends Component {
@@ -101,7 +101,7 @@ export default class TextInputLayout extends Component {
 
         let labelTransY = this.state.labelAnimationValue.interpolate({
             inputRange: [0, 1],
-            outputRange: [height + labelHeight >> 1, labelHeight - this.props.labelFontSize]
+            outputRange: [height - 15 + labelHeight >> 1, labelHeight - this.props.labelFontSize]
         });
 
         let labelFontSize = this.state.labelAnimationValue.interpolate({
@@ -145,7 +145,7 @@ export default class TextInputLayout extends Component {
         let color = isError ? errorColor : (isFocused ? focusColor : hintColor);
         return (
             <View style={[{
-                borderBottomWidth: isFocused ? 2 : 1,
+                borderBottomWidth: 0,
                 borderBottomColor: color
             }, this.props.style]}
             >
