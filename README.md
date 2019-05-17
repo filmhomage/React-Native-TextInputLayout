@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-##Props
+## Props
 - hintColor
 - errorColor
 - focusColor
